@@ -20,7 +20,7 @@ const questions = [
     { type: 'input', name: 'username', message: 'Enter your GitHub username:' },
     { type: 'input', name: 'email', message: 'Enter your email address:' },
     ];
-    
+
 // function to write README file
 function writeToFile(fileName, data) {
     const outputPath = path.join(__dirname, fileName);
@@ -37,8 +37,14 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            writeToFile('README.md', answers);
+        })
+        .catch((error) => console.error(error));
 }
+
 
 // function call to initialize program
 init();
