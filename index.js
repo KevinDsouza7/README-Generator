@@ -3,41 +3,6 @@ const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-function generateREADME(data) {
-    return `
-# ${data.title}
-
-## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Description
-${data.description}
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## License
-This project is licensed under the ${data.license} license. ![License Badge](https://img.shields.io/badge/license-${data.license}-green)
-
-## Contributing
-${data.contributing}
-
-## Tests
-${data.tests}
-
-## Questions
-For questions or concerns, please contact ${data.email}. You can also visit [my GitHub profile](https://github.com/${data.username}).
-`;
-}
 
 // array of questions for user
 const questions = [
@@ -60,7 +25,7 @@ const questions = [
 // function to write README file
 function writeToFile(fileName, data) {
     const outputPath = path.join(__dirname, fileName);
-    const readmeContent = generateREADME(data);
+    const readmeContent = generateMarkdown(data);
 
     fs.writeFile(outputPath, readmeContent, (err) => {
         if (err) {
