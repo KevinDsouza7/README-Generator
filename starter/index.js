@@ -20,10 +20,19 @@ const questions = [
     { type: 'input', name: 'username', message: 'Enter your GitHub username:' },
     { type: 'input', name: 'email', message: 'Enter your email address:' },
     ];
-
-
+    
 // function to write README file
 function writeToFile(fileName, data) {
+    const outputPath = path.join(__dirname, fileName);
+    const readmeContent = generateMarkdown(data);
+
+    fs.writeFile(outputPath, readmeContent, (err) => {
+        if (err) {
+            console.error('Error writing README file:', err);
+        } else {
+            console.log('README.md has been successfully created!');
+        }
+    });
 }
 
 // function to initialize program
