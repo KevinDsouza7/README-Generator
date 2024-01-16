@@ -44,8 +44,8 @@ If you have any questions or need further assistance, feel free to contact me:
 
 ## Video
 Watch the video tutorial for using the README Generator:
-[![Watch the video]()](link-to-video)
+[![Watch the video](./Assets/Template.png)](./Assets/video-tutorial.mp4)
 
 ---
 
-*This README was generated with ❤️ by [Your Name]'s [README Generator](https://github.com/your-username/your-readme-generator).*
+*This README was generated with ❤️ by Kevin Dsouza.
